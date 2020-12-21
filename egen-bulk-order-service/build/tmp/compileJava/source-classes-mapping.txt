@@ -1,0 +1,28 @@
+com/egen/order/EgenBulkOrderServiceApplication.java
+ com.egen.order.EgenBulkOrderServiceApplication
+com/egen/order/model/domain/ErrorResponse.java
+ com.egen.order.model.domain.ErrorResponse
+com/egen/order/model/enums/ResponseStatus.java
+ com.egen.order.model.enums.ResponseStatus
+com/egen/order/model/domain/Order.java
+ com.egen.order.model.domain.Order
+com/egen/order/repository/BulkOrderRepository.java
+ com.egen.order.repository.BulkOrderRepository
+com/egen/order/model/enums/OrderStatus.java
+ com.egen.order.model.enums.OrderStatus
+com/egen/order/controller/BulkOrderController.java
+ com.egen.order.controller.BulkOrderController
+com/egen/order/model/enums/PaymentType.java
+ com.egen.order.model.enums.PaymentType
+com/egen/order/model/domain/Payment.java
+ com.egen.order.model.domain.Payment
+com/egen/order/model/domain/OrderDetails.java
+ com.egen.order.model.domain.OrderDetails
+com/egen/order/service/BulkOrderService.java
+ com.egen.order.service.BulkOrderService
+com/egen/order/model/client/OrderEvent.java
+ com.egen.order.model.client.OrderEvent
+com/egen/order/mapper/OrderEventMapper.java
+ com.egen.order.mapper.OrderEventMapper
+com/egen/order/service/impl/BulkOrderServiceImpl.java
+ com.egen.order.service.impl.BulkOrderServiceImpl
