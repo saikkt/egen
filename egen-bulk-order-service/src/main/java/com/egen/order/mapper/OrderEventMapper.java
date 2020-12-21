@@ -16,9 +16,9 @@ public class OrderEventMapper {
         List<OrderEvent> orderEvents = new ArrayList<>();
         orders.forEach(order -> {
             OrderEvent orderEvent = new OrderEvent();
-            orderEvent.setOrder_id(order.getOrderId());
+            orderEvent.setOrderId(order.getOrderId());
             orderEvent.setOrderStatus(order.getOrderStatus());
-            orderEvent.setOrdershippingaddressline1(order.getOrderShippingAddressline1());
+            orderEvent.setOrderShippingAddressline1(order.getOrderShippingAddressline1());
             orderEvent.setOrderShippingAddressline2(order.getOrderShippingAddressline2());
             orderEvent.setOrderShippingCharges(order.getOrderShippingCharges());
             orderEvent.setOrderShippingCity(order.getOrderShippingCity());

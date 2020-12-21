@@ -7,6 +7,6 @@ import java.util.List;
 public interface BulkOrderService {
 
     void createBulkOrders(List<Order> orders);
-    void deleteOrderById(long orderId);
+    void deleteOrderById(String orderId);
     void deleteAllInBatch(List<Order> orders);
 }

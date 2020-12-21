@@ -1,0 +1,3 @@
+"orderCustomerId","orderTotal","orderSubtotal","orderTax","orderShippingCharges","orderShippingAddressline1","orderShippingAddressline2","orderShippingCity","orderShippingState","orderShippingZip","orderDetails__orderItemName","orderDetails__orderItemQuantity","orderDetails__orderItemUnitPrice","payments__paymentConfirmationNumber","payments__paymentAmount","payments__paymentType"
+"2131231sasassasaassa2dsasaa","35.00","20.00","10.00","5","blasasa","bla","bla","bla","23455677","kdnksdn","2","10.00","abcd123sas45sasa5","30","VISA"
+"","","","","","","","","","","","","","abcd123sas45sasa5","5","VISA"

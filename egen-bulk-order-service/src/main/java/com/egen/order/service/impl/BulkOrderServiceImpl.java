@@ -9,9 +9,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.SessionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -25,25 +27,35 @@ public class BulkOrderServiceImpl implements BulkOrderService {
 
     @Override
     public void createBulkOrders(List<Order> orders) {
-      List<Order> orderList =  bulkOrderRepository.saveAll(orders);
-      publishBulkOrders(orderList);
+
+        List<Order> tempOrderList = new ArrayList<>();
+
+        for(int i = 0; i < orders.size() ; i++){
+
+            tempOrderList.add(orders.get(i));
+
+            if(i % 5 == 0 && i > 0){
+                publishBulkOrders(bulkOrderRepository.saveAll(tempOrderList));
+                tempOrderList.clear();
+            }
+        }
+        if(tempOrderList.size() > 0){
+            publishBulkOrders(bulkOrderRepository.saveAll(tempOrderList));
+        }
     }
 
     private void publishBulkOrders(List<Order> orders){
         List<OrderEvent> orderEvents = OrderEventMapper.toOrderEvent(orders);
-
-        orderEvents.stream().forEach(orderEvent -> {
-            try {
-                rabbitTemplate.convertAndSend("order-events","",
-                        objectMapper.writeValueAsString(orderEvent));
-            } catch (JsonProcessingException e) {
-                log.debug("Unable to process the order event", e);
-            }
-        });
+        try {
+            rabbitTemplate.convertAndSend("order-events","",
+                    objectMapper.writeValueAsString(orderEvents));
+        } catch (JsonProcessingException e) {
+            log.debug("Unable to process the order event", e);
+        }
     }
 
     @Override
-    public void deleteOrderById(long orderId) {
+    public void deleteOrderById(String orderId) {
         bulkOrderRepository.deleteById(orderId);
     }
 

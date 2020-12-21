@@ -23,7 +23,7 @@ public class BulkOrderController {
     }
 
     @DeleteMapping("/{orderId}")
-    public ResponseEntity<Void> deleteOrderById(long orderId){
+    public ResponseEntity<Void> deleteOrderById(String orderId){
         bulkOrderService.deleteOrderById(orderId);
         return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
     }

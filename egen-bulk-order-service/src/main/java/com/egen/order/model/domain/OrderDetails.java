@@ -2,11 +2,13 @@ package com.egen.order.model.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.UUID;
 
 @Entity
 @Table(name = "order_detail")
@@ -15,12 +17,13 @@ import java.math.BigDecimal;
 public class OrderDetails implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Column(name = "order_item_id")
-    private Long orderItemId;
+    private String orderItemId;
 
     @Column(name = "order_id")
-    private Long orderId;
+    private String orderId;
 
     @Column(name = "order_item_name")
     @NotNull(message = "Item name is required")
@@ -38,5 +41,6 @@ public class OrderDetails implements Serializable {
     private long version;
 
     public OrderDetails(){
+
     }
 }
