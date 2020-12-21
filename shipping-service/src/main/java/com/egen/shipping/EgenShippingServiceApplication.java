@@ -8,8 +8,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class EgenShippingServiceApplication {
 
-	static final String queueName = "shipping-queue";
-
 	public static void main(String[] args) {
 		SpringApplication.run(EgenShippingServiceApplication.class, args);
 	}
