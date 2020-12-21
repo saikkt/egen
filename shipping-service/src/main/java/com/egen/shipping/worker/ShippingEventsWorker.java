@@ -28,23 +28,6 @@ public class ShippingEventsWorker {
     private final ShippingService shippingService;
     private final ShippingRepository shippingRepository;
 
-    @Column(name = "shipping_id")
-    private long id;
-    @Column(name = "order_id")
-    private long orderId;
-    @Column(name = "order_shipping_addressline1")
-    private String addressLine1;
-    @Column(name = "order_shipping_addressline2")
-    private String addressLine2;
-    @Column(name = "order_shipping_city")
-    private String city;
-    @Column(name = "order_shipping_state")
-    private String state;
-    @Column(name = "order_shipping_zip")
-    private int zip;
-    @Column(name = "order_shipping_country")
-    private String country;
-
     @RabbitListener(queues = "order-events-queue")
     public void receiveEvent(String message) {
         try {
