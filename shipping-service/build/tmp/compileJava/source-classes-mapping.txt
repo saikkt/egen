@@ -1,0 +1,21 @@
+com/egen/shipping/worker/ShippingEventsWorker.java
+ com.egen.shipping.worker.ShippingEventsWorker
+ com.egen.shipping.worker.ShippingEventsWorker$1
+com/egen/shipping/model/dao/Shipping.java
+ com.egen.shipping.model.dao.Shipping
+com/egen/shipping/controller/ShippingController.java
+ com.egen.shipping.controller.ShippingController
+com/egen/shipping/repository/ShippingRepository.java
+ com.egen.shipping.repository.ShippingRepository
+com/egen/shipping/EgenShippingServiceApplication.java
+ com.egen.shipping.EgenShippingServiceApplication
+com/egen/shipping/config/SpringFoxConfig.java
+ com.egen.shipping.config.SpringFoxConfig
+com/egen/shipping/mapper/ShippingMapper.java
+ com.egen.shipping.mapper.ShippingMapper
+com/egen/shipping/model/enums/OrderStatus.java
+ com.egen.shipping.model.enums.OrderStatus
+com/egen/shipping/model/domain/OrderPlaced.java
+ com.egen.shipping.model.domain.OrderPlaced
+com/egen/shipping/service/ShippingService.java
+ com.egen.shipping.service.ShippingService
